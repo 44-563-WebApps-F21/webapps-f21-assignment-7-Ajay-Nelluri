@@ -35,6 +35,7 @@
         <div class="stack">row item 1</div>
         <div class="stack">row item 2</div>
         <div class="stack">row item 3</div>
+        <button onclick="Unique()">Unique</button>
     </div>
 	
 </body>
@@ -56,17 +57,40 @@
             stackItems[length - 1].remove();
         }
     }
+    
     function zap() {
-        count = 0
+        count = 0;
+        let deleteArr =[];
         stackItems = document.getElementsByClassName("stack")
         value = document.getElementById("form_input").value
         for (item of stackItems) {
             if (item.innerHTML == value) {
-                stackItems[count].remove();
+               deleteArr.push(item);
             }
             count += 1
         }
+        for(let i=0; i <deleteArr.length;i++) {
+            deleteArr[i].remove()
+        }
         console.log("We are getting rid of all elements with '" + value + "'")
+		
+	}
+
+    function unique(){
+        let stackItems = document.getElementByClassName("stack");
+        let items = {}
+        let rlist = [];
+        for(let el of stackItems){
+            if(items[e1.innerHTML]){
+                rlist.push(e1)
+            } else {
+                items[e1.innerHTML]=1
+            }
+
+        }
+        rlist.forEach(e1 => {
+            e1.remove()
+        })
     }
     
 </script>
